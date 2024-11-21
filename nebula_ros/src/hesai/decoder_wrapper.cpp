@@ -97,8 +97,7 @@ void HesaiDecoderWrapper::process_cloud_packet(
 {
   // Accumulate packets for recording only if someone is subscribed to the topic (for performance)
   if (
-    packets_pub_ && (packets_pub_->get_subscription_count() > 0 ||
-                     packets_pub_->get_intra_process_subscription_count() > 0)) {
+    packets_pub_) {
     if (current_scan_msg_->packets.size() == 0) {
       current_scan_msg_->header.stamp = packet_msg->stamp;
     }
