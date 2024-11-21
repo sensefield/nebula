@@ -217,7 +217,9 @@ inline int get_n_returns(uint8_t return_mode)
     case return_mode::TRIPLE_FIRST_LAST_STRONGEST:
       return 3;
     default:
-      throw std::runtime_error("Unknown return mode");
+      std::cerr << "Unknown return mode: " << std::endl;
+      return 2;
+      /* throw std::runtime_error("Unknown return mode"); */
   }
 }
 

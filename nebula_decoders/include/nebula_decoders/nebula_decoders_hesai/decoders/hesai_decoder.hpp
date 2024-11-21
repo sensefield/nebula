@@ -89,9 +89,9 @@ protected:
   bool parse_packet(const std::vector<uint8_t> & packet)
   {
     if (packet.size() < sizeof(typename SensorT::packet_t)) {
-      RCLCPP_ERROR_STREAM(
+      /* RCLCPP_ERROR_STREAM(
         logger_, "Packet size mismatch: " << packet.size() << " | Expected at least: "
-                                          << sizeof(typename SensorT::packet_t));
+                                          << sizeof(typename SensorT::packet_t)); */
       return false;
     }
     if (std::memcpy(&packet_, packet.data(), sizeof(typename SensorT::packet_t))) {
