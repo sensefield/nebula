@@ -1370,7 +1370,7 @@ T HesaiHwInterface::CheckSizeAndParse(const std::vector<uint8_t> & data)
   if (data.size() < sizeof(T)) {
     throw std::runtime_error("Attempted to parse too-small payload");
   } else if (data.size() > sizeof(T)) {
-    PrintError("Sensor returned longer payload than expected. Will parse anyway.");
+    /* PrintError("Sensor returned longer payload than expected. Will parse anyway."); */
   }
 
   T parsed;
